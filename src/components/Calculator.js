@@ -10,7 +10,7 @@ function Calculator({ year, month, yearCal, selected, information }) {
         {information ? (
           <>
             <p>
-              From {selected === "human" ? "Human " : "Cat "}
+              From {selected === "human" ? "human " : "cat "}
               {year && year !== 0 ? year + " Y" : ""}
               {month && month !== 0 ? month + " M" : ""}
             </p>
