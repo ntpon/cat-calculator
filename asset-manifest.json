@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/cat-calculator/static/css/main.565a1bab.css",
+    "main.js": "/cat-calculator/static/js/main.2b35c546.js",
+    "static/js/787.dfa129dc.chunk.js": "/cat-calculator/static/js/787.dfa129dc.chunk.js",
+    "static/media/bg.jpg": "/cat-calculator/static/media/bg.0e6d3023a63e498d09f3.jpg",
+    "static/media/cat-3.png": "/cat-calculator/static/media/cat-3.6515ef3b3c71f4b80da6.png",
+    "static/media/cat-2.png": "/cat-calculator/static/media/cat-2.211b73b11d06ce5deaa9.png",
+    "static/media/cat-4.png": "/cat-calculator/static/media/cat-4.d0473534b56fb051d67e.png",
+    "static/media/human-2.png": "/cat-calculator/static/media/human-2.7e89ef5fed63d0ca6d61.png",
+    "static/media/human-3.png": "/cat-calculator/static/media/human-3.a8e8db9a708df83fcf8c.png",
+    "static/media/cat-1.png": "/cat-calculator/static/media/cat-1.82974f9317a70b270c04.png",
+    "static/media/human-1.png": "/cat-calculator/static/media/human-1.b96f54ab8cff7acb3299.png",
+    "static/media/human-4.png": "/cat-calculator/static/media/human-4.741a2ef50b0d8684d1ac.png",
+    "index.html": "/cat-calculator/index.html",
+    "main.565a1bab.css.map": "/cat-calculator/static/css/main.565a1bab.css.map",
+    "main.2b35c546.js.map": "/cat-calculator/static/js/main.2b35c546.js.map",
+    "787.dfa129dc.chunk.js.map": "/cat-calculator/static/js/787.dfa129dc.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.565a1bab.css",
+    "static/js/main.2b35c546.js"
+  ]
+}
