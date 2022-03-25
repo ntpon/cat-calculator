@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/cat-calculator/static/css/main.565a1bab.css",
-    "main.js": "/cat-calculator/static/js/main.2b35c546.js",
+    "main.js": "/cat-calculator/static/js/main.f9368f55.js",
     "static/js/787.dfa129dc.chunk.js": "/cat-calculator/static/js/787.dfa129dc.chunk.js",
     "static/media/bg.jpg": "/cat-calculator/static/media/bg.0e6d3023a63e498d09f3.jpg",
     "static/media/cat-3.png": "/cat-calculator/static/media/cat-3.6515ef3b3c71f4b80da6.png",
@@ -14,11 +14,11 @@
     "static/media/human-4.png": "/cat-calculator/static/media/human-4.741a2ef50b0d8684d1ac.png",
     "index.html": "/cat-calculator/index.html",
     "main.565a1bab.css.map": "/cat-calculator/static/css/main.565a1bab.css.map",
-    "main.2b35c546.js.map": "/cat-calculator/static/js/main.2b35c546.js.map",
+    "main.f9368f55.js.map": "/cat-calculator/static/js/main.f9368f55.js.map",
     "787.dfa129dc.chunk.js.map": "/cat-calculator/static/js/787.dfa129dc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.565a1bab.css",
-    "static/js/main.2b35c546.js"
+    "static/js/main.f9368f55.js"
   ]
 }
