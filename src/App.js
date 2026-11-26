@@ -2,6 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import Calculator from "./components/Calculator";
 import Sidebar from "./components/Sidebar";
+import { convertAge } from "./age";
 import human1 from "./assets/human-1.png";
 import cat1 from "./assets/cat-1.png";
 import cat2 from "./assets/cat-2.png";
@@ -51,25 +52,11 @@ const humanResults = {
 function App() {
   const [data, setData] = useState(null);
   const onSubmit = (data) => {
-    let { year, month, selectedOption } = data;
-    let calYear = 0;
-    calYear = year + month / 12;
-
-    if (selectedOption === "human") {
-      if (year >= 2) {
-        calYear = (calYear - 2) * 4 + 24;
-      } else {
-        calYear = calYear * 15;
-      }
-    } else {
-      if (year >= 24) {
-        calYear = (calYear - 24) / 4 + 2;
-      } else {
-        calYear = calYear * (1 / calYear);
-      }
-    }
+    const { year, month, selectedOption } = data;
+    const inputMonths = year * 12 + month;
+    const convertedMonths = convertAge(inputMonths, selectedOption);
     let information = [];
-    const checkAge = selectedOption === "human" ? calYear : year;
+    const checkAge = (selectedOption === "human" ? convertedMonths : inputMonths) / 12;
     if (checkAge >= 56) {
       information = [catResults.senior, humanResults.senior];
     } else if (checkAge >= 24) {
@@ -83,20 +70,19 @@ function App() {
     setData({
       year,
       month,
-      yearCal: parseInt(calYear),
+      convertedMonths,
       selected: selectedOption,
       information,
     });
-    // if(data)
   };
 
   return (
     <AppContainer>
-      <Sidebar onSubmit={onSubmit} />
+      <Sidebar onSubmit={onSubmit} onReset={() => setData(null)} />
       <MainContainer>
         <Calculator
           month={data?.month}
-          yearCal={data?.yearCal}
+          convertedMonths={data?.convertedMonths}
           year={data?.year}
           selected={data?.selected}
           information={data?.information}

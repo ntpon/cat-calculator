@@ -7,9 +7,9 @@ const options = [
   { value: "human", label: "Age Cat To Human" },
   { value: "cat", label: "Age Human To Cat" },
 ];
-function Sidebar({ onSubmit }) {
-  const [year, setYear] = useState(null);
-  const [month, setMonth] = useState(null);
+function Sidebar({ onSubmit, onReset }) {
+  const [year, setYear] = useState("");
+  const [month, setMonth] = useState("");
   const [selectedOption, setSelectedOption] = useState(options[0]);
 
   const submitHandler = (e) => {
@@ -23,9 +23,16 @@ function Sidebar({ onSubmit }) {
       selectedOption: selectedOption.value,
     });
   };
+  const resetHandler = () => {
+    setYear("");
+    setMonth("");
+    setSelectedOption(options[0]);
+    onReset();
+  };
+
   return (
     <SidebarContainer>
-      <form onSubmit={submitHandler}>
+      <form onSubmit={submitHandler} onReset={resetHandler}>
         <Header>
           <HeaderBrand>Cat Calculator</HeaderBrand>
           <HeaderDescription>
@@ -34,7 +41,8 @@ function Sidebar({ onSubmit }) {
         </Header>
         <ContentSelector>
           <Select
-            defaultValue={selectedOption}
+            value={selectedOption}
+            aria-label="Conversion direction"
             onChange={setSelectedOption}
             options={options}
             styles={{ width: "100%" }}
@@ -44,18 +52,22 @@ function Sidebar({ onSubmit }) {
           <input
             type='number'
             placeholder='Year'
+            min='0'
+            value={year}
             onChange={(e) => setYear(e.target.value)}
           />
           <input
             max='12'
             type='number'
             placeholder='Month'
+            min='0'
+            value={month}
             onChange={(e) => setMonth(e.target.value)}
           />
         </ContentInput>
         <ButtonContainer>
-          <Button>Convert</Button>
-          <Button danger>Reset</Button>
+          <Button type="submit">Convert</Button>
+          <Button type="reset" danger>Reset</Button>
         </ButtonContainer>
       </form>
       <ReferentContainer>
@@ -63,14 +75,14 @@ function Sidebar({ onSubmit }) {
         <List>
           <ListItem>
             <ReferentLink
-              href='https://www.inchcalculator.com/cat-age-calculator/'
+              href='https://catfriendly.com/wp-content/uploads/2025/09/FelineVMA_CatAgeToHumanAge.pdf'
               target='_blank'
             >
-              How Cat Age Calculator ?
+              Cat-to-human age chart
             </ReferentLink>
           </ListItem>
           <ListItem>
-            <ReferentLink href='https://github.com/ntpon' target='_blank'>
+            <ReferentLink href='https://github.com/ntpon/cat-calculator' target='_blank'>
               Source Code
             </ReferentLink>
           </ListItem>

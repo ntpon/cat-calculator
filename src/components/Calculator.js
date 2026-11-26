@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import imageBG from "../assets/bg.jpg";
+import { formatAge } from "../age";
 
-// import cat1 from "../assets/cat-1.png";
-function Calculator({ year, month, yearCal, selected, information }) {
+function Calculator({ year, month, convertedMonths, selected, information }) {
   return (
     <CalculatorContainer>
       <CalculatorHeader>
@@ -11,10 +11,9 @@ function Calculator({ year, month, yearCal, selected, information }) {
           <>
             <p>
               From {selected === "human" ? "Cat " : "Human "}
-              {year && year !== 0 ? year + " Y" : ""}
-              {month && month !== 0 ? month + " M" : ""}
+              {formatAge(year * 12 + month)}
             </p>
-            <p>Age of cat is {yearCal} Y</p>
+            <p>Age of {selected} is {formatAge(convertedMonths)}</p>
             <p>
               "
               {selected === "human"
@@ -81,10 +80,6 @@ const CalculatorContent = styled.div`
     height: 100%;
     object-fit: cover;
   }
-`;
-
-const CalculatorLabel = styled.h4`
-  font-size: 24px;
 `;
 
 const CatContainer = styled.div`
